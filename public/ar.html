@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Gesture Interactions - A-Frame & AR.js</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <!-- <script src="js/aframe-ar.js"></script> -->
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <!-- <script src="gesture-detector.js"></script> -->
+    <!-- <script src="gesture-handler.js"></script> -->
+  </head>
+
+<!-- 
+
+      <a-scene embedded arjs='sourceType: webcam;'>
+		<a-box position='0 0.5 0' material='opacity: 0.5;'></a-box>
+		<a-marker-camera type="pattern" url="https://cdn.glitch.com/418c9d09-ea8f-42a9-a6b8-65fe2a5baa88%2Fpattern-marker%20(3).patt?1528056640776"></a-marker-camera>
+	</a-scene>
+ -->
+
+
+  <body>
+      <a-scene arjs
+      embedded
+      renderer="logarithmicDepthBuffer: true;"
+      vr-mode-ui="enabled: false"
+      gesture-detector
+      id="scene"
+    >
+      <a-assets>
+        <a-asset-item
+        id="mars"
+        src="model/mars_1_6792.glb">
+        </a-asset-item>
+        <a-asset-item
+        id="moon"
+        src="model/Moon_1_3474.glb">
+        </a-asset-item>
+        <a-asset-item
+        id="neptune"
+        src="model/Neptune_1_49528.glb">
+        </a-asset-item>
+        <a-asset-item
+        id="venus"
+        src="model/Venus_1_12103.glb">
+        </a-asset-item>
+      </a-assets>
+
+      <!-- <a-marker
+        preset="hiro"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        smooth="true"
+        smoothCount="100"
+        id="markerA"
+      > -->
+      <!-- <a-marker
+        preset='custom'
+        type="pattern"
+        url="pattern-hip-hip-array-bw2.patt"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        smooth="true"
+        smoothCount="100"
+        id="marker-hip-hip"
+      >
+        <a-entity
+          id="ar-model"
+          gltf-model="#venus"
+          position="-2.5 -2.5 2.5"
+          scale="0.002 0.002 0.002"
+          class="clickable"
+          gesture-handler
+        >
+        </a-entity>
+      </a-marker> -->
+
+      <!-- <a-marker
+        preset='custom'
+        type="pattern"
+        url="pattern-hip-hip-array-bw.patt"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        smooth="true"
+        smoothCount="100"
+        id="marker-hip-hip2"
+      >
+        <a-entity
+          id="ar-model"
+          gltf-model="#neptune"
+          position="-2.5 -2.5 2.5"
+          scale="0.002 0.002 0.002"
+          class="clickable"
+          gesture-handler
+        >
+        </a-entity>
+      </a-marker> -->
+
+      <a-marker
+        preset='hiro'
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        smooth="true"
+        smoothCount="10000"
+        id="marker-hiro"
+      >
+        <a-entity
+          id="ar-model"
+          gltf-model="#mars"
+          position="0 1 0"
+          scale="0.002 0.002 0.002"
+          class="clickable"
+          gesture-handler
+        >
+        </a-entity>
+      </a-marker>
+
+      <a-marker
+        preset='kanji'
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        smooth="true"
+        smoothCount="5000"
+        id="marker-kanji"
+      >
+        <a-entity
+          id="ar-model"
+          gltf-model="#neptune"
+          position="0 0 0"
+          scale="0.002 0.002 0.002"
+          class="clickable"
+          gesture-handler
+        >
+        </a-entity>
+      </a-marker>
+      <!-- <a-entity camera></a-entity> -->
+    </a-scene>
+  </body>
+</html>

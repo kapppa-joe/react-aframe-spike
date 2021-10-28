@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/aframe.min.js"></script>
+  <script src="https://cdn.rawgit.com/tizzle/aframe-orbit-controls-component/master/dist/aframe-orbit-controls-component.min.js"></script>
+</head>
+  <title>Test aframe without marker</title>
+</head>
+<body>
+  <a-scene vr-mode-ui="enabled: false">
+    <a-assets>
+      <a-asset-item
+      id="mars"
+      src="./model/mars_1_6792.glb">
+      </a-asset-item>
+      <a-asset-item
+      id="moon"
+      src="./model/Moon_1_3474.glb">
+      </a-asset-item>
+      <a-asset-item
+      id="neptune"
+      src="./model/Neptune_1_49528.glb">
+      </a-asset-item>
+      <a-asset-item
+      id="venus"
+      src="./model/Venus_1_12103.glb">
+      </a-asset-item>
+    </a-assets>
+
+
+
+    <a-entity id="camera" camera position="0 0 5"
+              orbit-controls="target: #target;
+                              enableDamping: true; dampingFactor: 0.25;
+                              autoRotate: false;
+                              rotateSpeed:0.16;
+                              minDistance:3; maxDistance:15;"
+              mouse-cursor=""
+              >
+      <a-light type="spot" position="0 0 0" target="#target" color="#fff">
+        <!-- <a-animation attribute="position" direction="alternate"
+                     from="0 0 0" to="0 5 0"
+                     dur="5000" easing="ease"
+                     fill="forwards" repeat="indefinite"
+                     ></a-animation> -->
+      </a-light>
+    </a-entity>
+
+    <a-entity id="mouseCursor" cursor="rayOrigin: mouse"></a-entity>
+
+
+    <a-entity
+      id="target"
+      gltf-model="#mars"
+      position="1 1 1"
+      scale="0.002 0.002 0.002"
+      class="clickable"
+      animation="property: rotation; from:0 0 0; to: 0 360 0 ;dur: 20000; easing: linear ; loop: true"
+      gesture-handler
+    >
+    
+    </a-entity>
+
+    
+    
+    <a-sky color="#000000"></a-sky>
+    
+  </a-scene>
+</body>
+</html>
