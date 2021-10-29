@@ -10,13 +10,13 @@ function App() {
       <Nav />
       <Switch>
         <Route exact path="/">
-          <IframePage src="vr.html" />
+          <IframePage src="./vr.html" />
         </Route>
         <Route exact path="/ar">
-          <IframePage src="ar.html" />
+          <IframePage src="./ar.html" />
         </Route>
         <Route exact path="/ar_no_marker">
-          <IframePage src="ar_no_marker.html" />
+          <IframePage src="./ar_no_marker.html" />
         </Route>
       </Switch>
     </div>
