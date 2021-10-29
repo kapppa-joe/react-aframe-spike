@@ -1,10 +1,6 @@
 import { Route, Switch } from "react-router";
 import Nav from "./components/Nav";
-import Planet from "./pages/Planet";
 import IframePage from "./pages/IframePage";
-
-import { Demo } from "./pages/Demo";
-// import Planet2 from "./pages/Planet2";
 
 import "./App.css";
 
@@ -14,9 +10,13 @@ function App() {
       <Nav />
       <Switch>
         <Route exact path="/">
-          <IframePage />
-          {/* <Demo /> */}
-          {/* <Planet /> */}
+          <IframePage src="vr.html" />
+        </Route>
+        <Route exact path="/ar">
+          <IframePage src="ar.html" />
+        </Route>
+        <Route exact path="/ar_no_marker">
+          <IframePage src="ar_no_marker.html" />
         </Route>
       </Switch>
     </div>
