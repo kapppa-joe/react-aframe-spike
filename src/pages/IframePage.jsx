@@ -25,12 +25,17 @@ const IframePage = ({ src }) => {
                 );
               })}
           </div>
+          <button
+            className="button show-question-button"
+            onClick={toggleShowQuestion}
+          >
+            Show
+            <br />
+            Quiz
+          </button>
         </div>
 
         <Iframe id="iframe" src={src} />
-        <button className="button" onClick={toggleShowQuestion}>
-          Show question
-        </button>
       </div>
     </>
   );

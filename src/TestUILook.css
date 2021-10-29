@@ -1,0 +1,21 @@
+section#test-ui-look {
+  height: 100vh;
+
+  color: #ccc;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section div {
+  border: solid 0.5px #ffc;
+  padding: 4em;
+  width: 80vw;
+}
+
+section .badge {
+  width: 5em;
+  height: 5em;
+  margin: 2em;
+}

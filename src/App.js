@@ -1,6 +1,7 @@
 import { Route, Switch } from "react-router";
 import Nav from "./components/Nav";
 import IframePage from "./pages/IframePage";
+import TestUILook from "./pages/TestUILook";
 
 import "./App.css";
 
@@ -17,6 +18,9 @@ function App() {
         </Route>
         <Route exact path="/ar_no_marker">
           <IframePage src="./ar_no_marker.html" />
+        </Route>
+        <Route exact path="/test_ui_look">
+          <TestUILook />
         </Route>
       </Switch>
     </div>

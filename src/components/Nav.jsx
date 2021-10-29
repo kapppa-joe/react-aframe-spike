@@ -13,6 +13,9 @@ const Nav = () => {
       <Link className="button" to="./ar_no_marker">
         AR - no marker
       </Link>
+      <Link className="button" to="./test_ui_look">
+        Test UI Look
+      </Link>
     </nav>
   );
 };
