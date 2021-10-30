@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="js/aframe.min.js"></script>
   <script src="https://cdn.rawgit.com/tizzle/aframe-orbit-controls-component/master/dist/aframe-orbit-controls-component.min.js"></script>
+  <script src="https://cdn.rawgit.com/matthewbryancurtis/aframe-star-system-component/db4f1030/index.js"></script>
 </head>
   <title>Test aframe without marker</title>
 </head>
@@ -63,7 +64,7 @@
     
     
     <a-sky color="#000000"></a-sky>
-    
+    <a-entity star-system="count: 500; radius: 250; depth: 0"></a-entity>
   </a-scene>
 </body>
 </html>
