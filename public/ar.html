@@ -12,6 +12,7 @@
 
     <script src="js/aframe.min.js"></script>
     <script src="js/aframe-ar.js"></script>
+    <script src="js/dynamicLoadModel.js"></script>
     <script src="js/gesture-detector.js"></script>
     <script src="js/gesture-handler.js"></script>
   </head>
@@ -39,7 +40,7 @@
       >
         <a-entity
           id="ar-model"
-          gltf-model="#mars-small"
+          dynamic-load-model
           position="0 0 0"
           scale="0.1 0.1 0.1"
           animation="property: rotation; to: 0 360 0; dur: 10000; loop:true"

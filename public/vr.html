@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="js/aframe.min.js"></script>
+  <script src="js/dynamicLoadModel.js" defer></script>
   <script src="https://cdn.rawgit.com/tizzle/aframe-orbit-controls-component/master/dist/aframe-orbit-controls-component.min.js"></script>
   <script src="https://cdn.rawgit.com/matthewbryancurtis/aframe-star-system-component/db4f1030/index.js"></script>
 </head>
@@ -17,21 +18,7 @@
       id="mars"
       src="./model/mars_small.glb">
       </a-asset-item>
-      <a-asset-item
-      id="moon"
-      src="./model/Moon_1_3474.glb">
-      </a-asset-item>
-      <a-asset-item
-      id="neptune"
-      src="./model/Neptune_1_49528.glb">
-      </a-asset-item>
-      <a-asset-item
-      id="venus"
-      src="./model/Venus_1_12103.glb">
-      </a-asset-item>
     </a-assets>
-
-
 
     <a-entity id="camera" camera position="0 0 5"
               orbit-controls="target: #target;
@@ -42,26 +29,21 @@
               mouse-cursor=""
               >
       <a-light type="spot" position="0 0 0" target="#target" color="#fff" intensity="1.2">
-      <!-- <a-light type="spot" position="0 0 0" target="#target" color="#fff" intensity="5"> -->
       </a-light>
     </a-entity>
 
     <a-entity id="mouseCursor" cursor="rayOrigin: mouse"></a-entity>
 
-
     <a-entity
       id="target"
-      gltf-model="#mars"
+      dynamic-load-model
       position="1 1 1"
       scale="0.3 0.3 0.3"
       class="clickable"
       animation="property: rotation; from:0 0 0; to: 0 360 0 ;dur: 20000; easing: linear ; loop: true"
       gesture-handler
     >
-    
     </a-entity>
-
-    
     
     <a-sky color="#000000"></a-sky>
     <a-entity star-system="count: 500; radius: 250; depth: 0"></a-entity>

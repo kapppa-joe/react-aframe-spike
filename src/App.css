@@ -71,10 +71,16 @@ button.show-question-button {
 
 #nav-bar {
   display: flex;
-  gap: 1em;
-  justify-content: center;
+  flex-flow: column;
 }
 
-#nav-bar a {
-  display: block;
+#nav-bar .row {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+}
+#nav-bar .row a,
+#nav-bar .row button {
+  display: inline;
 }

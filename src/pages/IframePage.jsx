@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Iframe from "react-iframe";
+import { useParams } from "react-router";
 
-const IframePage = ({ src }) => {
+const IframePage = ({ src, modelName }) => {
   const [showQuestion, setShowQuestion] = useState(false);
   const toggleShowQuestion = () => {
     setShowQuestion((curr) => !curr);
@@ -35,7 +36,10 @@ const IframePage = ({ src }) => {
           </button>
         </div>
 
-        <Iframe id="iframe" src={src} />
+        <Iframe
+          id="iframe"
+          src={modelName ? `${src}?model=${modelName}` : src}
+        />
       </div>
     </>
   );
