@@ -49,15 +49,16 @@
       </a-marker>
 
       <a-marker
-        preset="kanji"
+        type="pattern"
+        url="./images/pattern-rocket-sharp.patt"
         raycaster="objects: .clickable"
         emitevents="true"
         cursor="fuse: false; rayOrigin: mouse;"
-        id="marker-hiro"
+        id="custom-marker"
       >
         <a-entity
           id="ar-model"
-          gltf-model="#venus-small"
+          dynamic-load-model
           position="0 0 0"
           scale="0.1 0.1 0.1"
           animation="property: rotation; to: 0 360 0; dur: 10000; loop:true"
