@@ -1,18 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Iframe from "react-iframe";
-import { useParams } from "react-router";
 
 const IframePage = ({ src, modelName }) => {
   const [showQuestion, setShowQuestion] = useState(false);
+  const [msgFromIframe, setMsgFromIframe] = useState(null);
   const toggleShowQuestion = () => {
     setShowQuestion((curr) => !curr);
   };
 
+  useEffect(() => {
+    window.addEventListener("message", (e) => {
+      if (e.data && e.data.from === "iframe") {
+        setMsgFromIframe(e.data.msg);
+      }
+    });
+  }, []);
   return (
     <>
       <p>AR.js embbeded in React app by iframe</p>
+      {msgFromIframe && <span>Msg from iframe: {msgFromIframe}</span>}
       <div id="iframe-container">
-        <div id="question" className={showQuestion && "show"}>
+        <div id="question" className={showQuestion ? "show" : ""}>
           <p>Question 1.</p>
           <p>How many moons does mars has?</p>
           <div className="answer-button-wrapper">
@@ -20,7 +28,7 @@ const IframePage = ({ src, modelName }) => {
               .fill()
               .map((n, i) => {
                 return (
-                  <button className="answer-button button" type="input">
+                  <button key={i} className="answer-button button" type="input">
                     {i}
                   </button>
                 );

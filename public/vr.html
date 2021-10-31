@@ -20,7 +20,7 @@
       </a-asset-item>
     </a-assets>
 
-    <a-entity id="camera" camera position="0 0 5"
+    <a-entity id="camera" camera position="0 0 0"
               orbit-controls="target: #target;
                               enableDamping: true; dampingFactor: 0.25;
                               autoRotate: false;
@@ -37,7 +37,7 @@
     <a-entity
       id="target"
       dynamic-load-model
-      position="1 1 1"
+      position="0 0 -4"
       scale="0.3 0.3 0.3"
       class="clickable"
       animation="property: rotation; from:0 0 0; to: 0 360 0 ;dur: 20000; easing: linear ; loop: true"
@@ -46,7 +46,8 @@
     </a-entity>
     
     <a-sky color="#000000"></a-sky>
-    <a-entity star-system="count: 500; radius: 250; depth: 0"></a-entity>
+    <a-entity star-system="count: 500; radius: 250; depth: 0; size: 0.5" animation="property: rotation; from:0 0 0; to:360 360 0; dur: 1000000; easing: linear; loop: true">
+    </a-entity>
   </a-scene>
 </body>
 </html>
