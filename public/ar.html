@@ -68,12 +68,35 @@
         ></a-entity>
       </a-marker>
 
-      <a-entity camera id="camera"></a-entity>
+      <a-entity camera id="camera">
+        <!-- status text for debug purpose
+        <a-entity position="0 -0.8 -3">
+          <a-text
+            id="status-text"
+            color="#FF3"
+            font="roboto"
+            align="center"
+            value="marker not found"
+            width="1"
+          >
+          </a-text>
+        </a-entity> -->
+      </a-entity>
     </a-scene>
+
+    <!--  quick snippet for testing & debug purpose.
     <script>
       const sceneElement = document.querySelector("a-scene");
-      console.log(sceneElement);
       sceneElement.removeFullScreenStyles();
-    </script>
+
+      const statusText = document.querySelector("#status-text");
+      const markerEl = document.querySelector("#marker-hiro");
+      markerEl.addEventListener("markerFound", () => {
+        statusText.setAttribute("value", "marker found");
+      });
+      markerEl.addEventListener("markerLost", () => {
+        statusText.setAttribute("value", "marker lost");
+      });
+    </script> -->
   </body>
 </html>
