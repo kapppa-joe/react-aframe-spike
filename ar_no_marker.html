@@ -12,34 +12,53 @@
 
     <script src="js/aframe.min.js"></script>
     <script src="js/aframe-ar.js"></script>
-    <script src="js/gesture-detector.js"></script>
-    <script src="js/gesture-handler-non-marker.js"></script>
+    <script src="js/dynamicLoadModel.js"></script>
+    <script src="https://cdn.rawgit.com/tizzle/aframe-orbit-controls-component/master/dist/aframe-orbit-controls-component.min.js"></script>
+    <link rel="stylesheet" href="styles/ar.css" />
   </head>
 
   <body>
     <a-scene
       arjs
       vr-mode-ui="enabled: false"
-      renderer="precisioj: mediump"
+      renderer="precision: mediump"
       id="scene"
-      gesture-detector
     >
+      <a-entity
+        id="camera"
+        camera
+        position="0 0 0"
+        orbit-controls="target: #ar-model;
+                                enableDamping: true; dampingFactor: 0.25;
+                                autoRotate: false;
+                                rotateSpeed:0.16;
+                                minDistance:1; maxDistance:15;
+                                zoomSpeed:0.5"
+        mouse-cursor=""
+      >
+        <a-light
+          type="spot"
+          position="0 0 0"
+          target="#ar-model"
+          color="#fff"
+          intensity="1.2"
+        >
+        </a-light>
+      </a-entity>
+
+      <a-light type="ambient" position="0 0 0" color="#fff" intensity="0.3">
+      </a-light>
+
       <a-assets>
-        <a-asset-item id="mars-small" src="./model/mars_small.glb">
-        </a-asset-item>
-        <a-asset-item id="venus-small" src="./model/venus_small.glb">
-        </a-asset-item>
+        <a-asset-item id="dummy" src="./model/dummy.glb"> </a-asset-item>
       </a-assets>
       <a-entity
         id="ar-model"
-        gltf-model="#mars-small"
+        dynamic-load-model
         position="0 0 -4"
         scale="0.1 0.1 0.1"
-        animation="property: rotation; to: 0 360 0; dur: 10000; loop:true"
-        gesture-handler
+        animation="property: rotation; to: 0 360 0; dur: 10000; loop:true; easing:linear"
       ></a-entity>
-
-      <a-entity camera id="camera"> </a-entity>
     </a-scene>
     <script>
       const sceneElement = document.querySelector("a-scene");
