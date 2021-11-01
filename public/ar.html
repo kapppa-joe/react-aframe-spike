@@ -84,19 +84,20 @@
       </a-entity>
     </a-scene>
 
-    <!--  quick snippet for testing & debug purpose.
     <script>
+      // custom script to solve issue of planet got squeezed to long flat ellipse on phone screen
       const sceneElement = document.querySelector("a-scene");
       sceneElement.removeFullScreenStyles();
 
-      const statusText = document.querySelector("#status-text");
-      const markerEl = document.querySelector("#marker-hiro");
-      markerEl.addEventListener("markerFound", () => {
-        statusText.setAttribute("value", "marker found");
-      });
-      markerEl.addEventListener("markerLost", () => {
-        statusText.setAttribute("value", "marker lost");
-      });
-    </script> -->
+      // quick snippet for testing & debug purpose.
+      // const statusText = document.querySelector("#status-text");
+      // const markerEl = document.querySelector("#marker-hiro");
+      // markerEl.addEventListener("markerFound", () => {
+      //   statusText.setAttribute("value", "marker found");
+      // });
+      // markerEl.addEventListener("markerLost", () => {
+      //   statusText.setAttribute("value", "marker lost");
+      // });
+    </script>
   </body>
 </html>
