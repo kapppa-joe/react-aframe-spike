@@ -4,6 +4,7 @@ import Nav from "./components/Nav";
 import IframePage from "./pages/IframePage";
 import TestUILook from "./pages/TestUILook";
 import AFrameVR from "./pages/AFrameVR";
+import Test from "./pages/Test";
 
 import "./App.css";
 
@@ -14,7 +15,10 @@ function App() {
     <div className="App">
       <Nav setModelName={setModelName} />
       <Switch>
-        <Route exact path={["/", "/vr"]}>
+        <Route exact path="/">
+          <AFrameVR />
+        </Route>
+        <Route exact path={["/vr"]}>
           <IframePage src="./vr.html" modelName={modelName} />
         </Route>
         <Route exact path="/ar">
@@ -26,8 +30,8 @@ function App() {
         <Route exact path="/test_ui_look">
           <TestUILook />
         </Route>
-        <Route exact path="/aframe_vr">
-          <AFrameVR />
+        <Route exact path="/test">
+          <Test />
         </Route>
       </Switch>
     </div>
