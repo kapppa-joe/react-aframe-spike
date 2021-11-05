@@ -1,25 +1,37 @@
 {
   "files": {
     "main.css": "/react-aframe-spike/static/css/main.c06166fd.chunk.css",
-    "main.js": "/react-aframe-spike/static/js/main.d8e47220.chunk.js",
-    "main.js.map": "/react-aframe-spike/static/js/main.d8e47220.chunk.js.map",
+    "main.js": "/react-aframe-spike/static/js/main.47c86898.chunk.js",
+    "main.js.map": "/react-aframe-spike/static/js/main.47c86898.chunk.js.map",
     "runtime-main.js": "/react-aframe-spike/static/js/runtime-main.cfb9aaed.js",
     "runtime-main.js.map": "/react-aframe-spike/static/js/runtime-main.cfb9aaed.js.map",
-    "static/js/2.735ce7a6.chunk.js": "/react-aframe-spike/static/js/2.735ce7a6.chunk.js",
-    "static/js/2.735ce7a6.chunk.js.map": "/react-aframe-spike/static/js/2.735ce7a6.chunk.js.map",
+    "static/js/2.0b26bdc7.chunk.js": "/react-aframe-spike/static/js/2.0b26bdc7.chunk.js",
+    "static/js/2.0b26bdc7.chunk.js.map": "/react-aframe-spike/static/js/2.0b26bdc7.chunk.js.map",
     "index.html": "/react-aframe-spike/index.html",
     "static/css/main.c06166fd.chunk.css.map": "/react-aframe-spike/static/css/main.c06166fd.chunk.css.map",
-    "static/js/2.735ce7a6.chunk.js.LICENSE.txt": "/react-aframe-spike/static/js/2.735ce7a6.chunk.js.LICENSE.txt",
+    "static/js/2.0b26bdc7.chunk.js.LICENSE.txt": "/react-aframe-spike/static/js/2.0b26bdc7.chunk.js.LICENSE.txt",
+    "static/media/Earth.glb": "/react-aframe-spike/static/media/Earth.60c24660.glb",
+    "static/media/ISS.glb": "/react-aframe-spike/static/media/ISS.567b26c0.glb",
+    "static/media/Jupiter.glb": "/react-aframe-spike/static/media/Jupiter.9f4e981e.glb",
+    "static/media/Mars.glb": "/react-aframe-spike/static/media/Mars.8e7916d3.glb",
+    "static/media/Mercury.glb": "/react-aframe-spike/static/media/Mercury.73a7b717.glb",
+    "static/media/Moon.glb": "/react-aframe-spike/static/media/Moon.e1501588.glb",
+    "static/media/Neptune.glb": "/react-aframe-spike/static/media/Neptune.47d55473.glb",
+    "static/media/Pluto.glb": "/react-aframe-spike/static/media/Pluto.f075848a.glb",
+    "static/media/Saturn.glb": "/react-aframe-spike/static/media/Saturn.6bfde2c8.glb",
+    "static/media/Sun.glb": "/react-aframe-spike/static/media/Sun.95ac29bc.glb",
+    "static/media/Uranus.glb": "/react-aframe-spike/static/media/Uranus.d3afc901.glb",
+    "static/media/Venus.glb": "/react-aframe-spike/static/media/Venus.ba5eb1dc.glb",
+    "static/media/Voyager.glb": "/react-aframe-spike/static/media/Voyager.e843dfd4.glb",
+    "static/media/curiosity_rover.glb": "/react-aframe-spike/static/media/curiosity_rover.c0ec099d.glb",
+    "static/media/hubble.glb": "/react-aframe-spike/static/media/hubble.4d6bf8ce.glb",
     "static/media/mars-badge.5d7c3826.png": "/react-aframe-spike/static/media/mars-badge.5d7c3826.png",
-    "static/media/mars_small.8e7916d3.glb": "/react-aframe-spike/static/media/mars_small.8e7916d3.glb",
-    "static/media/mercury_small_brighten.0f6add62.glb": "/react-aframe-spike/static/media/mercury_small_brighten.0f6add62.glb",
-    "static/media/sun_small.dd23b4a7.glb": "/react-aframe-spike/static/media/sun_small.dd23b4a7.glb",
-    "static/media/venus_small.ba5eb1dc.glb": "/react-aframe-spike/static/media/venus_small.ba5eb1dc.glb"
+    "static/media/mercury_small_brighten.glb": "/react-aframe-spike/static/media/mercury_small_brighten.0f6add62.glb"
   },
   "entrypoints": [
     "static/js/runtime-main.cfb9aaed.js",
-    "static/js/2.735ce7a6.chunk.js",
+    "static/js/2.0b26bdc7.chunk.js",
     "static/css/main.c06166fd.chunk.css",
-    "static/js/main.d8e47220.chunk.js"
+    "static/js/main.47c86898.chunk.js"
   ]
 }
