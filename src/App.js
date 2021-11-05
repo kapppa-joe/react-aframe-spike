@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router";
 import Nav from "./components/Nav";
 import IframePage from "./pages/IframePage";
 import TestUILook from "./pages/TestUILook";
-import AFrameVR from "./pages/AFrameVR";
+import SolarSystem from "./pages/SolarSystem";
 import Test from "./pages/Test";
 
 import "./App.css";
@@ -16,7 +16,7 @@ function App() {
       <Nav setModelName={setModelName} />
       <Switch>
         <Route exact path="/">
-          <AFrameVR />
+          <SolarSystem />
         </Route>
         <Route exact path={["/vr"]}>
           <IframePage src="./vr.html" modelName={modelName} />

@@ -1,5 +1,14 @@
 const { AFRAME, THREE } = window;
 
+AFRAME.registerComponent("emit-glow", {
+  schema: {
+    color: { type: "color", default: "#FFF" },
+  },
+  init: function () {
+    console.log(this.el.object3DMap, "<----");
+  },
+});
+
 /******/ (function (modules) {
   // webpackBootstrap
   /******/ // The module cache
@@ -92,9 +101,22 @@ const { AFRAME, THREE } = window;
             });
 
             // ISSUE for OBJs: >> line below
-            var object = that.el.object3DMap.mesh.geometry.clone();
-            console.log(object, "<--- object");
-            object = new THREE.Geometry().fromBufferGeometry(object);
+
+            // change from here to make it work with gltf-model
+            let object;
+            if (that.el.object3DMap.mesh.geometry) {
+              object = that.el.object3DMap.mesh.geometry.clone();
+            } else {
+              const children = that.el.object3DMap.mesh.children;
+              const childrenMesh = children.find(
+                (child) => child.type === "Mesh"
+              );
+              object = childrenMesh.geometry.clone();
+            }
+
+            // let object = that.el.object3DMap.mesh.geometry.clone();
+            // comment out below as THREE.Geometry is deprecated.
+            // object = new THREE.Geometry().fromBufferGeometry(object);
             var modifier = new THREE.BufferSubdivisionModifier(2);
             object = modifier.modify(object);
 
@@ -289,9 +311,9 @@ const { AFRAME, THREE } = window;
           }
 
           if (index > this.length) {
-            throw new Error(
-              "THREE.BufferSubdivisionModifier: Index is out of range in TypedArrayHelper."
-            );
+            // throw new Error(
+            // "THREE.BufferSubdivisionModifier: Index is out of range in TypedArrayHelper."
+            // );
           }
 
           for (var i = 0; i < this.unit_size; i++) {
@@ -680,14 +702,20 @@ const { AFRAME, THREE } = window;
       };
 
       THREE.BufferSubdivisionModifier.prototype.modify = function (geometry) {
-        if (geometry instanceof THREE.Geometry) {
-          geometry.mergeVertices();
+        if (geometry instanceof THREE.BufferGeometry) {
+          // if (geometry instanceof THREE.Geometry) {
+          geometry.computeBoundingBox();
+          geometry = THREE.BufferGeometryUtils.mergeVertices(geometry);
+          geometry.computeVertexNormals();
+          geometry.center();
+          // geometry.mergeVertices();
 
           if (typeof geometry.normals === "undefined") {
             geometry.normals = [];
           }
 
-          geometry = convertGeometryToIndexedBuffer(geometry);
+          // comment out
+          // geometry = convertGeometryToIndexedBuffer(geometry);
         } else if (!(geometry instanceof THREE.BufferGeometry)) {
           console.error(
             "THREE.BufferSubdivisionModifier: Geometry is not an instance of THREE.BufferGeometry or THREE.Geometry"
